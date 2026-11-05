@@ -11,7 +11,6 @@ A premium, modern, responsive personal portfolio website for **S. Peer Mohamed**
 - **Location:** Tenkasi, Tamil Nadu, India
 - **Experience:** 15+ Years
 - **Users Supported:** 500+
-- **Availability:** Immediate Joiner
 - **Contact:**
   - Phone: `+91 9894668866`
   - Email: `shahul.mohamed@gmail.com`
@@ -26,7 +25,7 @@ A premium, modern, responsive personal portfolio website for **S. Peer Mohamed**
 - **Executive Summary & 6 Core Competency Pillars:** Highlighting IT Infrastructure, Windows Server Administration, Microsoft 365, Active Directory, Network Management, and Technical Support.
 - **Categorized Technical Skills:** Interactive cards spanning Operating Systems, Microsoft Technologies, Networking, IT Support, and CCTV.
 - **Chronological Experience Timeline:** Vertical timeline tracking verified roles at Jaz Computer (2018–Present), Saudi Arabia (2014–2018), and The Chennai Computers (2005–2009).
-- **Verified Credentials & Education:** DCHT diploma, HSC, SSLC, Indian Passport, Driving License, and Multilingual fluency (English, Tamil, Arabic).
+- **Verified Credentials & Education:** DCHT diploma, HSC, SSLC, and Multilingual fluency (English, Tamil, Arabic).
 - **Direct Interactive Communication:** One-click email composing, phone dialing, WhatsApp direct chat, and real CV PDF download.
 - **Dark / Light Mode Toggle:** Smooth transition with persistent preference storage.
 - **Responsive & Accessible:** Flawless layout across smartphones, tablets, laptops, and ultra-wide displays.

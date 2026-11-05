@@ -42,7 +42,6 @@ export const personalInfo = {
   email: "shahul.mohamed@gmail.com",
   whatsappUrl: "https://wa.me/919894668866?text=Hello%20S.%20Peer%20Mohamed,%20I%20reviewed%20your%20IT%20Support%20%26%20System%20Administrator%20portfolio",
   nationality: "Indian",
-  availability: "Immediate Joiner",
   cvFileName: "CV_PeerMohamed.pdf",
 };
 
@@ -51,25 +50,19 @@ export const statsData = [
     value: 15,
     suffix: "+",
     label: "Years Experience",
-    detail: "Continuous hands-on IT infrastructure & systems expertise",
+    detail: "Hands-on IT infrastructure, systems administration, and technical support",
   },
   {
     value: 500,
     suffix: "+",
     label: "Users Supported",
-    detail: "Enterprise-wide technical & desktop end-user support",
+    detail: "End-to-end technical, desktop, and remote user support",
   },
   {
     value: 4,
     suffix: " Yrs",
     label: "Saudi Arabia Experience",
-    detail: "International multi-cultural IT systems deployment (2014–2018)",
-  },
-  {
-    value: 100,
-    suffix: "%",
-    label: "Immediate Availability",
-    detail: "Ready to join organizations immediately",
+    detail: "International enterprise IT systems and technical support (2014–2018)",
   },
 ];
 
@@ -77,28 +70,28 @@ export const skillCategories: SkillCategory[] = [
   {
     id: "os",
     title: "Operating Systems",
-    description: "Enterprise operating systems deployment, policy configuration and lifecycle support.",
+    description: "Enterprise operating systems deployment, policy configuration, and maintenance.",
     iconName: "Monitor",
     skills: ["Windows 10/11 Administration", "Windows Server"],
   },
   {
     id: "microsoft",
     title: "Microsoft Technologies",
-    description: "Cloud identity, directory management, productivity suites and messaging services.",
+    description: "Identity management, email systems, and cloud productivity administration.",
     iconName: "Cloud",
     skills: ["Active Directory", "Microsoft 365", "Outlook"],
   },
   {
     id: "networking",
     title: "Networking",
-    description: "Core IP network infrastructure, routing, domain services and troubleshooting.",
+    description: "Network configuration, infrastructure protocols, and connectivity troubleshooting.",
     iconName: "Network",
     skills: ["DNS / DHCP", "LAN/WAN", "TCP/IP", "Network Troubleshooting"],
   },
   {
     id: "it-support",
     title: "IT Support & Systems",
-    description: "Comprehensive end-user support, hardware diagnostics, backup protection and security.",
+    description: "End-user support, hardware diagnostics, routine maintenance, and data protection.",
     iconName: "Headphones",
     skills: [
       "Remote Desktop Support",
@@ -112,7 +105,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: "additional",
     title: "Additional Skills",
-    description: "Physical and perimeter security systems implementation.",
+    description: "Physical security systems and surveillance hardware deployment.",
     iconName: "ShieldCheck",
     skills: ["CCTV Installation"],
   },
@@ -128,7 +121,7 @@ export const experienceData: ExperienceItem[] = [
     responsibilities: [
       "Windows Server administration, DNS/DHCP infrastructure maintenance and domain management",
       "Microsoft 365 tenant support, account management, mailbox administration and cloud services",
-      "End-user Remote Support and rapid incident resolution for business operations",
+      "End-user remote desktop support and rapid technical issue resolution",
       "Printers management, CCTV security systems installation & networking setup",
     ],
   },
@@ -139,8 +132,8 @@ export const experienceData: ExperienceItem[] = [
     badge: "International Experience",
     location: "Kingdom of Saudi Arabia",
     responsibilities: [
-      "Enterprise Desktop Support across diverse departments and multilingual user environments",
-      "Windows Installation, system staging, image rollout and operating system updates",
+      "Desktop support across enterprise departments and diverse user environments",
+      "Windows installation, system configuration, and software deployment",
       "Hardware troubleshooting, component replacement, and local network support",
     ],
   },
@@ -148,12 +141,12 @@ export const experienceData: ExperienceItem[] = [
     role: "Computer Service Engineer",
     company: "The Chennai Computers",
     period: "2005 – 2009",
-    badge: "Foundation Years",
+    badge: "Technical Service",
     location: "Chennai, Tamil Nadu",
     responsibilities: [
-      "Custom PC Assembly, architectural hardware evaluation and performance verification",
-      "OS Installation, driver configuration and peripheral interfacing",
-      "Hardware Repair, circuit diagnostics, component-level troubleshooting and preventive servicing",
+      "PC assembly, hardware testing, and system builds",
+      "Operating system installation, driver configuration, and peripheral setup",
+      "Hardware repair, fault diagnosis, and routine preventive servicing",
     ],
   },
 ];
@@ -166,59 +159,41 @@ export const educationData: EducationItem[] = [
   },
   {
     degree: "HSC (Higher Secondary Certificate)",
-    badge: "Secondary Education",
-    type: "Board of Higher Secondary Examination",
+    badge: "Higher Secondary",
+    type: "State Board of School Examination",
   },
   {
     degree: "SSLC (Secondary School Leaving Certificate)",
-    badge: "School Certification",
-    type: "Board of Secondary Education",
+    badge: "Secondary School",
+    type: "State Board of Secondary Education",
   },
 ];
 
 export const highlightsData: HighlightItem[] = [
   {
-    title: "15+ Years Experience",
-    subtitle: "Extensive hands-on experience spanning enterprise and service centers",
+    title: "15+ Years IT Experience",
+    subtitle: "Proven track record in systems administration, hardware maintenance, and IT infrastructure",
     iconName: "Briefcase",
-    badge: "Veteran",
+    badge: "15+ Years",
   },
   {
-    title: "500+ Users Supported",
-    subtitle: "Demonstrated capacity to maintain uptime and fast support SLAs",
+    title: "500+ End Users Supported",
+    subtitle: "Extensive experience delivering reliable desktop, software, and remote technical support",
     iconName: "Users",
-    badge: "Scale",
+    badge: "500+ Users",
   },
   {
     title: "Saudi Arabia Work Experience",
-    subtitle: "4 years of overseas IT experience in multicultural business environments",
+    subtitle: "Four years of professional international experience in enterprise IT support (2014–2018)",
     iconName: "Globe",
-    badge: "International",
-  },
-  {
-    title: "Immediate Joiner",
-    subtitle: "Available to start immediately without extended notice delays",
-    iconName: "Zap",
-    badge: "Ready Now",
-  },
-  {
-    title: "Valid Indian Passport",
-    subtitle: "Documentation complete and available for travel or international relocation",
-    iconName: "FileCheck",
-    badge: "Verified",
-  },
-  {
-    title: "Indian Driving License",
-    subtitle: "Fully licensed for regional mobility and on-site client dispatch",
-    iconName: "Compass",
-    badge: "Active",
+    badge: "2014 – 2018",
   },
 ];
 
 export const languagesData = [
   {
     name: "Tamil",
-    proficiency: "Native / Full Professional",
+    proficiency: "Native Proficiency",
     flag: "🇮🇳",
   },
   {
@@ -228,7 +203,7 @@ export const languagesData = [
   },
   {
     name: "Arabic",
-    proficiency: "Professional Working (Saudi Arabia Experience)",
+    proficiency: "Professional Working Proficiency (Saudi Arabia Experience)",
     flag: "🇸🇦",
   },
 ];

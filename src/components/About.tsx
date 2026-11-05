@@ -117,7 +117,7 @@ export const About: React.FC<AboutProps> = ({ isDark }) => {
                 </div>
                 <div className="flex items-center gap-1.5 text-emerald-400">
                   <CheckCircle2 className="w-4 h-4" />
-                  <span>Immediate Joiner</span>
+                  <span>500+ Users Supported</span>
                 </div>
               </div>
             </div>

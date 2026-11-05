@@ -54,10 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ isDark, onDownloadCv }) => {
               Providing enterprise-grade system administration, Windows Server management, cloud productivity (M365), and reliable technical support.
             </p>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Available for Immediate Joining</span>
-            </div>
+
           </div>
 
           {/* Quick Nav Links */}

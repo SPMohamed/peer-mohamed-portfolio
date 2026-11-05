@@ -138,7 +138,7 @@ export const Skills: React.FC<SkillsProps> = ({ isDark }) => {
                   {category.skills.map((skill) => (
                     <div
                       key={skill}
-                      className={`flex items-center justify-between p-3 rounded-xl border text-sm font-medium transition-all ${
+                      className={`flex items-center p-3 rounded-xl border text-sm font-medium transition-all ${
                         isDark
                           ? 'bg-slate-950/60 border-slate-800/90 text-slate-200 hover:border-slate-700 hover:bg-slate-900/80'
                           : 'bg-slate-50 border-slate-200/90 text-slate-800 hover:border-slate-300 hover:bg-white'
@@ -150,22 +150,12 @@ export const Skills: React.FC<SkillsProps> = ({ isDark }) => {
                         </div>
                         <span>{skill}</span>
                       </div>
-                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800/40">
-                        Verified
-                      </span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Bottom Card Footer Indicator */}
-              <div className="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                <span>Enterprise Tested</span>
-                <span className="text-emerald-400 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  Active Skill
-                </span>
-              </div>
+
             </div>
           ))}
         </div>

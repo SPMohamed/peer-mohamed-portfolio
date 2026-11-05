@@ -73,7 +73,7 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
               isDark ? 'text-slate-300' : 'text-slate-600'
             }`}
           >
-            Looking for a dedicated IT Support Engineer or System Administrator ready to join immediately? Reach out directly via email, phone, or WhatsApp.
+            Looking for an experienced IT Support Engineer or System Administrator with 15+ years of hands-on expertise? Reach out directly via email, phone, or WhatsApp.
           </p>
         </div>
 

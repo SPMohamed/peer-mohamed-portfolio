@@ -6,7 +6,6 @@ import {
   CheckCircle,
   Building2,
   Globe2,
-  Clock,
   Sparkles,
 } from 'lucide-react';
 import { experienceData } from '../data/portfolioData';
@@ -137,14 +136,7 @@ export const Experience: React.FC<ExperienceProps> = ({ isDark }) => {
                         ))}
                       </ul>
 
-                      {/* Footer Info */}
-                      <div className="mt-5 pt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3 text-cyan-400" />
-                          {index === 0 ? 'Active Deployment' : 'Completed Assignment'}
-                        </span>
-                        <span className="text-slate-400">Verified Service</span>
-                      </div>
+
                     </div>
                   </div>
 

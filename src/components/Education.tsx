@@ -3,9 +3,8 @@ import {
   GraduationCap,
   Award,
   Globe,
-  Zap,
-  FileCheck,
-  Compass,
+  Users,
+  Briefcase,
   CheckCircle2,
   Languages,
   BookOpen,
@@ -20,19 +19,13 @@ export const Education: React.FC<EducationProps> = ({ isDark }) => {
   const getHighlightIcon = (name: string) => {
     switch (name) {
       case 'Briefcase':
-        return <Award className="w-5 h-5 text-cyan-400" />;
+        return <Briefcase className="w-5 h-5 text-cyan-400" />;
       case 'Users':
-        return <Globe className="w-5 h-5 text-blue-400" />;
+        return <Users className="w-5 h-5 text-blue-400" />;
       case 'Globe':
-        return <Globe className="w-5 h-5 text-indigo-400" />;
-      case 'Zap':
-        return <Zap className="w-5 h-5 text-amber-400" />;
-      case 'FileCheck':
-        return <FileCheck className="w-5 h-5 text-emerald-400" />;
-      case 'Compass':
-        return <Compass className="w-5 h-5 text-cyan-300" />;
+        return <Globe className="w-5 h-5 text-emerald-400" />;
       default:
-        return <CheckCircle2 className="w-5 h-5 text-cyan-400" />;
+        return <Award className="w-5 h-5 text-cyan-400" />;
     }
   };
 
@@ -40,7 +33,7 @@ export const Education: React.FC<EducationProps> = ({ isDark }) => {
     <section id="education" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         
-        {/* ================= Part 1: Career Highlights & Credentials ================= */}
+        {/* ================= Part 1: Career Highlights ================= */}
         <div>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 mb-3">
@@ -48,9 +41,9 @@ export const Education: React.FC<EducationProps> = ({ isDark }) => {
               <span>Career Highlights</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              Verified{' '}
+              Key{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                Credentials &amp; Availability
+                Career Highlights
               </span>
             </h2>
             <p
@@ -58,7 +51,7 @@ export const Education: React.FC<EducationProps> = ({ isDark }) => {
                 isDark ? 'text-slate-400' : 'text-slate-600'
               }`}
             >
-              Essential operational qualifications and readiness indicators verified directly from curriculum vitae.
+              Proven track record and core milestones accumulated over 15+ years in IT systems and infrastructure.
             </p>
           </div>
 
@@ -106,7 +99,7 @@ export const Education: React.FC<EducationProps> = ({ isDark }) => {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/60 border border-blue-500/30 mb-2">
                 <GraduationCap className="w-3.5 h-3.5" />
-                <span>Academic Foundation</span>
+                <span>Academic Background</span>
               </div>
               <h3 className="text-2xl font-bold tracking-tight text-white">
                 Education
@@ -158,7 +151,7 @@ export const Education: React.FC<EducationProps> = ({ isDark }) => {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 mb-2">
                 <Languages className="w-3.5 h-3.5" />
-                <span>Multilingual Fluency</span>
+                <span>Languages</span>
               </div>
               <h3 className="text-2xl font-bold tracking-tight text-white">
                 Languages
@@ -189,7 +182,7 @@ export const Education: React.FC<EducationProps> = ({ isDark }) => {
                         </p>
                       </div>
                     </div>
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/50" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                   </div>
                 </div>
               ))}
@@ -203,7 +196,7 @@ export const Education: React.FC<EducationProps> = ({ isDark }) => {
             >
               <Globe className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
               <span>
-                Arabic language skills honed through 4 continuous years of professional IT operations in Saudi Arabia.
+                Arabic language skills honed through 4 years of professional IT operations in Saudi Arabia.
               </span>
             </div>
           </div>

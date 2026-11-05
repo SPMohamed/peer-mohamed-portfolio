@@ -88,21 +88,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               <Server className="w-5 h-5 text-white" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-lg tracking-tight group-hover:text-cyan-400 transition-colors">
-                  {personalInfo.name}
-                </span>
-                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  Active
-                </span>
-              </div>
+              <span className="font-bold text-lg tracking-tight group-hover:text-cyan-400 transition-colors">
+                {personalInfo.name}
+              </span>
               <p
                 className={`text-xs ${
                   isDark ? 'text-slate-400' : 'text-slate-500'
                 } hidden sm:block font-mono`}
               >
-                IT Support Engineer & System Admin
+                {personalInfo.title}
               </p>
             </div>
           </a>
