@@ -21,18 +21,25 @@ export const Skills: React.FC<SkillsProps> = ({ isDark }) => {
   const getIcon = (name: string) => {
     switch (name) {
       case 'Monitor':
-        return <Monitor className="w-5 h-5 text-cyan-400" />;
+        return <Monitor className={`w-5 h-5 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`} />;
       case 'Cloud':
-        return <Cloud className="w-5 h-5 text-blue-400" />;
+        return <Cloud className={`w-5 h-5 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />;
       case 'Network':
-        return <Network className="w-5 h-5 text-emerald-400" />;
+        return <Network className={`w-5 h-5 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`} />;
       case 'Headphones':
-        return <Headphones className="w-5 h-5 text-cyan-300" />;
+        return <Headphones className={`w-5 h-5 ${isDark ? 'text-cyan-300' : 'text-cyan-600'}`} />;
       case 'ShieldCheck':
-        return <ShieldCheck className="w-5 h-5 text-purple-400" />;
+        return <ShieldCheck className={`w-5 h-5 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />;
       default:
-        return <Wrench className="w-5 h-5 text-cyan-400" />;
+        return <Wrench className={`w-5 h-5 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`} />;
     }
+  };
+
+  const getCategorySkillCount = (cat: (typeof skillCategories)[number]) => {
+    const subCount = cat.subSkills
+      ? Object.values(cat.subSkills).reduce((acc, list) => acc + list.length, 0)
+      : 0;
+    return cat.skills.length + subCount;
   };
 
   const filteredCategories =
@@ -46,13 +53,27 @@ export const Skills: React.FC<SkillsProps> = ({ isDark }) => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 mb-3">
+          <div
+            className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider mb-3 border ${
+              isDark
+                ? 'text-cyan-400 bg-cyan-950/60 border-cyan-500/30'
+                : 'text-cyan-800 bg-cyan-50 border-cyan-200'
+            }`}
+          >
             <Terminal className="w-3.5 h-3.5" />
             <span>Technical Capabilities</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h2
+            className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
+              isDark ? 'text-white' : 'text-slate-900'
+            }`}
+          >
             Technical{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            <span
+              className={`text-transparent bg-clip-text bg-gradient-to-r ${
+                isDark ? 'from-cyan-400 to-blue-500' : 'from-cyan-600 to-blue-600'
+              }`}
+            >
               Skills &amp; Expertise
             </span>
           </h2>
@@ -76,7 +97,7 @@ export const Skills: React.FC<SkillsProps> = ({ isDark }) => {
                   : 'bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200'
               }`}
             >
-              All Skills ({skillCategories.reduce((acc, cat) => acc + cat.skills.length, 0)})
+              All Skills ({skillCategories.reduce((acc, cat) => acc + getCategorySkillCount(cat), 0)})
             </button>
             {skillCategories.map((cat) => (
               <button
@@ -90,7 +111,7 @@ export const Skills: React.FC<SkillsProps> = ({ isDark }) => {
                     : 'bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200'
                 }`}
               >
-                {cat.title} ({cat.skills.length})
+                {cat.title} ({getCategorySkillCount(cat)})
               </button>
             ))}
           </div>
@@ -111,15 +132,27 @@ export const Skills: React.FC<SkillsProps> = ({ isDark }) => {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
+                    <div
+                      className={`p-2.5 rounded-xl border ${
+                        isDark ? 'bg-slate-800/80 border-slate-700/60' : 'bg-slate-100 border-slate-200'
+                      }`}
+                    >
                       {getIcon(category.iconName)}
                     </div>
                     <div>
-                      <h3 className="font-bold text-base text-white">
+                      <h3
+                        className={`font-bold text-base ${
+                          isDark ? 'text-white' : 'text-slate-900'
+                        }`}
+                      >
                         {category.title}
                       </h3>
-                      <span className="text-[11px] font-mono text-cyan-400">
-                        {category.skills.length} competencies
+                      <span
+                        className={`text-[11px] font-mono ${
+                          isDark ? 'text-cyan-400' : 'text-cyan-700 font-semibold'
+                        }`}
+                      >
+                        {getCategorySkillCount(category)} competencies
                       </span>
                     </div>
                   </div>
@@ -135,23 +168,58 @@ export const Skills: React.FC<SkillsProps> = ({ isDark }) => {
 
                 {/* Skills Badges */}
                 <div className="space-y-2.5">
-                  {category.skills.map((skill) => (
-                    <div
-                      key={skill}
-                      className={`flex items-center p-3 rounded-xl border text-sm font-medium transition-all ${
-                        isDark
-                          ? 'bg-slate-950/60 border-slate-800/90 text-slate-200 hover:border-slate-700 hover:bg-slate-900/80'
-                          : 'bg-slate-50 border-slate-200/90 text-slate-800 hover:border-slate-300 hover:bg-white'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-5 h-5 rounded-md bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                          <Check className="w-3.5 h-3.5 text-cyan-400" />
+                  {category.skills.map((skill) => {
+                    const subSkillsList = category.subSkills?.[skill];
+
+                    return (
+                      <div key={skill} className="space-y-2.5">
+                        <div
+                          className={`flex items-center p-3 rounded-xl border text-sm font-medium transition-all ${
+                            isDark
+                              ? 'bg-slate-950/60 border-slate-800/90 text-slate-200 hover:border-slate-700 hover:bg-slate-900/80'
+                              : 'bg-slate-50 border-slate-200/90 text-slate-800 hover:border-slate-300 hover:bg-white'
+                          }`}
+                        >
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-5 h-5 rounded-md bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+                              <Check
+                                className={`w-3.5 h-3.5 ${
+                                  isDark ? 'text-cyan-400' : 'text-cyan-600'
+                                }`}
+                              />
+                            </div>
+                            <span>{skill}</span>
+                          </div>
                         </div>
-                        <span>{skill}</span>
+
+                        {subSkillsList && subSkillsList.length > 0 && (
+                          <div className="ml-4 pl-3.5 sm:ml-5 sm:pl-4 border-l-2 border-cyan-500/30 space-y-2.5">
+                            {subSkillsList.map((subSkill) => (
+                              <div
+                                key={subSkill}
+                                className={`flex items-center p-3 rounded-xl border text-sm font-medium transition-all ${
+                                  isDark
+                                    ? 'bg-slate-950/40 border-slate-800/80 text-slate-300 hover:border-slate-700 hover:bg-slate-900/60'
+                                    : 'bg-slate-50/70 border-slate-200/80 text-slate-700 hover:border-slate-300 hover:bg-white'
+                                }`}
+                              >
+                                <div className="flex items-center gap-2.5">
+                                  <div className="w-5 h-5 rounded-md bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+                                    <Check
+                                      className={`w-3.5 h-3.5 ${
+                                        isDark ? 'text-cyan-400' : 'text-cyan-600'
+                                      }`}
+                                    />
+                                  </div>
+                                  <span>{subSkill}</span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 

@@ -20,13 +20,18 @@ export const App: React.FC = () => {
 
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
     if (isDark) {
       root.classList.add('dark');
       root.classList.remove('light');
+      body.classList.add('bg-navy-950', 'text-slate-100');
+      body.classList.remove('bg-slate-50', 'text-slate-900');
       localStorage.setItem('theme', 'dark');
     } else {
       root.classList.remove('dark');
       root.classList.add('light');
+      body.classList.remove('bg-navy-950', 'text-slate-100');
+      body.classList.add('bg-slate-50', 'text-slate-900');
       localStorage.setItem('theme', 'light');
     }
   }, [isDark]);
@@ -38,7 +43,7 @@ export const App: React.FC = () => {
   const handleDownloadCv = () => {
     const link = document.createElement('a');
     link.href = './CV_PeerMohamed.pdf';
-    link.download = 'Peer_Mohamed_CV.pdf';
+    link.download = 'CV_PeerMohamed.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -67,11 +72,10 @@ export const App: React.FC = () => {
       <Navbar
         isDark={isDark}
         toggleTheme={toggleTheme}
-        onDownloadCv={handleDownloadCv}
       />
 
       <main>
-        <Hero isDark={isDark} onDownloadCv={handleDownloadCv} />
+        <Hero isDark={isDark} />
         <About isDark={isDark} />
         <Skills isDark={isDark} />
         <Experience isDark={isDark} />
@@ -79,7 +83,7 @@ export const App: React.FC = () => {
         <Contact isDark={isDark} onDownloadCv={handleDownloadCv} />
       </main>
 
-      <Footer isDark={isDark} onDownloadCv={handleDownloadCv} />
+      <Footer isDark={isDark} />
     </div>
   );
 };

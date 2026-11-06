@@ -63,13 +63,27 @@ export const About: React.FC<AboutProps> = ({ isDark }) => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 mb-3">
+          <div
+            className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider mb-3 border ${
+              isDark
+                ? 'text-cyan-400 bg-cyan-950/60 border-cyan-500/30'
+                : 'text-cyan-800 bg-cyan-50 border-cyan-200'
+            }`}
+          >
             <Cpu className="w-3.5 h-3.5" />
             <span>Professional Profile</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h2
+            className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
+              isDark ? 'text-white' : 'text-slate-900'
+            }`}
+          >
             About{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            <span
+              className={`text-transparent bg-clip-text bg-gradient-to-r ${
+                isDark ? 'from-cyan-400 to-blue-500' : 'from-cyan-600 to-blue-600'
+              }`}
+            >
               S. Peer Mohamed
             </span>
           </h2>
@@ -94,8 +108,16 @@ export const About: React.FC<AboutProps> = ({ isDark }) => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="flex items-center gap-2 text-cyan-400 font-mono text-sm">
-                <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+              <div
+                className={`flex items-center gap-2 font-mono text-sm ${
+                  isDark ? 'text-cyan-400' : 'text-cyan-700'
+                }`}
+              >
+                <span
+                  className={`w-2 h-2 rounded-full ${
+                    isDark ? 'bg-cyan-400' : 'bg-cyan-600'
+                  }`}
+                ></span>
                 <span>Verified CV Professional Summary</span>
               </div>
               <blockquote
@@ -106,46 +128,86 @@ export const About: React.FC<AboutProps> = ({ isDark }) => {
                 &ldquo;{personalInfo.summary}&rdquo;
               </blockquote>
 
-              <div className="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono text-slate-400">
+              <div
+                className={`flex flex-wrap items-center gap-4 pt-2 text-xs font-mono ${
+                  isDark ? 'text-slate-400' : 'text-slate-600'
+                }`}
+              >
                 <div className="flex items-center gap-1.5">
-                  <MapPin className="w-4 h-4 text-cyan-400" />
+                  <MapPin
+                    className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}
+                  />
                   <span>{personalInfo.location}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <Calendar className="w-4 h-4 text-cyan-400" />
+                  <Calendar
+                    className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}
+                  />
                   <span>15+ Years Working Experience</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-emerald-400">
+                <div
+                  className={`flex items-center gap-1.5 ${
+                    isDark ? 'text-emerald-400' : 'text-emerald-600'
+                  }`}
+                >
                   <CheckCircle2 className="w-4 h-4" />
                   <span>500+ Users Supported</span>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-slate-800/80 pt-6 lg:pt-0 lg:pl-8 space-y-3 font-mono text-xs">
+            <div
+              className={`lg:col-span-4 border-t lg:border-t-0 lg:border-l pt-6 lg:pt-0 lg:pl-8 space-y-3 font-mono text-xs ${
+                isDark ? 'border-slate-800/80' : 'border-slate-200'
+              }`}
+            >
               <div
                 className={`p-3 rounded-xl border ${
                   isDark ? 'bg-slate-900/60 border-slate-800' : 'bg-slate-50 border-slate-200'
                 }`}
               >
-                <div className="text-slate-400 text-[11px]">Primary Domain</div>
-                <div className="font-semibold text-white mt-0.5">Enterprise IT &amp; SysAdmin</div>
+                <div className={`text-[11px] ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  Primary Domain
+                </div>
+                <div
+                  className={`font-semibold mt-0.5 ${
+                    isDark ? 'text-white' : 'text-slate-900'
+                  }`}
+                >
+                  Enterprise IT &amp; SysAdmin
+                </div>
               </div>
               <div
                 className={`p-3 rounded-xl border ${
                   isDark ? 'bg-slate-900/60 border-slate-800' : 'bg-slate-50 border-slate-200'
                 }`}
               >
-                <div className="text-slate-400 text-[11px]">International Experience</div>
-                <div className="font-semibold text-white mt-0.5">Saudi Arabia (2014 – 2018)</div>
+                <div className={`text-[11px] ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  International Experience
+                </div>
+                <div
+                  className={`font-semibold mt-0.5 ${
+                    isDark ? 'text-white' : 'text-slate-900'
+                  }`}
+                >
+                  Saudi Arabia (2014 – 2018)
+                </div>
               </div>
               <div
                 className={`p-3 rounded-xl border ${
                   isDark ? 'bg-slate-900/60 border-slate-800' : 'bg-slate-50 border-slate-200'
                 }`}
               >
-                <div className="text-slate-400 text-[11px]">Language Capabilities</div>
-                <div className="font-semibold text-white mt-0.5">English, Tamil, Arabic</div>
+                <div className={`text-[11px] ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  Language Capabilities
+                </div>
+                <div
+                  className={`font-semibold mt-0.5 ${
+                    isDark ? 'text-white' : 'text-slate-900'
+                  }`}
+                >
+                  English, Tamil, Arabic
+                </div>
               </div>
             </div>
           </div>
@@ -154,10 +216,14 @@ export const About: React.FC<AboutProps> = ({ isDark }) => {
         {/* 6 Core Pillars Grid */}
         <div className="space-y-4">
           <div className="text-left">
-            <h3 className="text-xl font-bold tracking-tight text-white">
+            <h3
+              className={`text-xl font-bold tracking-tight ${
+                isDark ? 'text-white' : 'text-slate-900'
+              }`}
+            >
               Core Technical Competencies
             </h3>
-            <p className="text-sm text-slate-400">
+            <p className={`text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
               The foundational pillars developed across 15+ years of active field practice.
             </p>
           </div>
@@ -177,11 +243,23 @@ export const About: React.FC<AboutProps> = ({ isDark }) => {
                   <div
                     className={`w-12 h-12 rounded-xl bg-gradient-to-tr ${pillar.color} p-0.5 mb-4 shadow-md group-hover:scale-105 transition-transform`}
                   >
-                    <div className="w-full h-full bg-navy-950 rounded-[10px] flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-cyan-300" />
+                    <div
+                      className={`w-full h-full rounded-[10px] flex items-center justify-center ${
+                        isDark ? 'bg-navy-950' : 'bg-white'
+                      }`}
+                    >
+                      <Icon
+                        className={`w-6 h-6 ${isDark ? 'text-cyan-300' : 'text-cyan-600'}`}
+                      />
                     </div>
                   </div>
-                  <h4 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  <h4
+                    className={`text-lg font-bold transition-colors ${
+                      isDark
+                        ? 'text-white group-hover:text-cyan-400'
+                        : 'text-slate-900 group-hover:text-blue-600'
+                    }`}
+                  >
                     {pillar.title}
                   </h4>
                   <p

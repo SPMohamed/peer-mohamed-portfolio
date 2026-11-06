@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  FileDown,
   Mail,
   ChevronRight,
   Server,
@@ -13,10 +12,9 @@ import { StatsCounter } from './StatsCounter';
 
 interface HeroProps {
   isDark: boolean;
-  onDownloadCv: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ isDark, onDownloadCv }) => {
+export const Hero: React.FC<HeroProps> = ({ isDark }) => {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -47,22 +45,46 @@ export const Hero: React.FC<HeroProps> = ({ isDark, onDownloadCv }) => {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
             {/* Location Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wide border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 shadow-sm">
-              <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+            <div
+              className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wide border shadow-sm ${
+                isDark
+                  ? 'border-cyan-500/30 bg-cyan-950/40 text-cyan-300'
+                  : 'border-cyan-500/30 bg-cyan-50 text-cyan-800'
+              }`}
+            >
+              <MapPin className={`w-3.5 h-3.5 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`} />
               <span>{personalInfo.location}</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
+              <span
+                className={`text-transparent bg-clip-text bg-gradient-to-r ${
+                  isDark
+                    ? 'from-white via-slate-100 to-slate-300'
+                    : 'from-slate-900 via-slate-800 to-slate-900'
+                }`}
+              >
                 Keeping IT Systems
               </span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-electric-500">
+              <span
+                className={`text-transparent bg-clip-text bg-gradient-to-r ${
+                  isDark
+                    ? 'from-cyan-400 via-blue-400 to-electric-500'
+                    : 'from-cyan-600 via-blue-600 to-electric-700'
+                }`}
+              >
                 Secure, Connected
               </span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-slate-200 to-slate-400">
+              <span
+                className={`text-transparent bg-clip-text bg-gradient-to-r ${
+                  isDark
+                    ? 'from-slate-100 via-slate-200 to-slate-400'
+                    : 'from-slate-800 via-slate-700 to-slate-900'
+                }`}
+              >
                 &amp; Running Smoothly.
               </span>
             </h1>
@@ -85,10 +107,18 @@ export const Hero: React.FC<HeroProps> = ({ isDark, onDownloadCv }) => {
                     : 'bg-white/80 border-slate-200 text-slate-900 shadow-sm'
                 }`}
               >
-                <div className="text-xl sm:text-2xl font-bold text-cyan-400 font-mono">
+                <div
+                  className={`text-xl sm:text-2xl font-bold font-mono ${
+                    isDark ? 'text-cyan-400' : 'text-cyan-600'
+                  }`}
+                >
                   <StatsCounter end={15} suffix="+" />
                 </div>
-                <div className="text-[11px] sm:text-xs text-slate-400 font-medium mt-0.5">
+                <div
+                  className={`text-[11px] sm:text-xs font-medium mt-0.5 ${
+                    isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}
+                >
                   Years Experience
                 </div>
               </div>
@@ -100,10 +130,18 @@ export const Hero: React.FC<HeroProps> = ({ isDark, onDownloadCv }) => {
                     : 'bg-white/80 border-slate-200 text-slate-900 shadow-sm'
                 }`}
               >
-                <div className="text-xl sm:text-2xl font-bold text-blue-400 font-mono">
+                <div
+                  className={`text-xl sm:text-2xl font-bold font-mono ${
+                    isDark ? 'text-blue-400' : 'text-blue-600'
+                  }`}
+                >
                   <StatsCounter end={500} suffix="+" />
                 </div>
-                <div className="text-[11px] sm:text-xs text-slate-400 font-medium mt-0.5">
+                <div
+                  className={`text-[11px] sm:text-xs font-medium mt-0.5 ${
+                    isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}
+                >
                   Users Supported
                 </div>
               </div>
@@ -115,10 +153,18 @@ export const Hero: React.FC<HeroProps> = ({ isDark, onDownloadCv }) => {
                     : 'bg-white/80 border-slate-200 text-slate-900 shadow-sm'
                 }`}
               >
-                <div className="text-xl sm:text-2xl font-bold text-emerald-400 font-mono">
+                <div
+                  className={`text-xl sm:text-2xl font-bold font-mono ${
+                    isDark ? 'text-emerald-400' : 'text-emerald-600'
+                  }`}
+                >
                   <StatsCounter end={4} suffix=" Yrs" />
                 </div>
-                <div className="text-[11px] sm:text-xs text-slate-400 font-medium mt-0.5">
+                <div
+                  className={`text-[11px] sm:text-xs font-medium mt-0.5 ${
+                    isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}
+                >
                   Saudi Arabia Exp
                 </div>
               </div>
@@ -126,14 +172,6 @@ export const Hero: React.FC<HeroProps> = ({ isDark, onDownloadCv }) => {
 
             {/* Action CTA Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-4">
-              <button
-                onClick={onDownloadCv}
-                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-500 via-blue-600 to-electric-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
-              >
-                <FileDown className="w-5 h-5 group-hover:animate-bounce" />
-                <span>Download My CV</span>
-              </button>
-
               <button
                 onClick={() => scrollTo('contact')}
                 className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold border transition-all duration-200 ${
@@ -196,28 +234,58 @@ export const Hero: React.FC<HeroProps> = ({ isDark, onDownloadCv }) => {
                 </div>
 
                 {/* Profile Card Footer */}
-                <div className="mt-4 pt-4 border-t border-slate-800/80 space-y-2">
+                <div
+                  className={`mt-4 pt-4 border-t space-y-2 ${
+                    isDark ? 'border-slate-800/80' : 'border-slate-200'
+                  }`}
+                >
                   <div className="flex items-center justify-between">
                     <div>
-                      <h2 className="text-base font-bold text-white tracking-wide">
+                      <h2
+                        className={`text-base font-bold tracking-wide ${
+                          isDark ? 'text-white' : 'text-slate-900'
+                        }`}
+                      >
                         {personalInfo.name}
                       </h2>
-                      <p className="text-xs text-cyan-400 font-mono">
+                      <p
+                        className={`text-xs font-mono ${
+                          isDark ? 'text-cyan-400' : 'text-cyan-700 font-medium'
+                        }`}
+                      >
                         {personalInfo.title}
                       </p>
                     </div>
-                    <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 font-mono">
+                    <span
+                      className={`px-2.5 py-1 rounded-full text-[11px] font-semibold font-mono border ${
+                        isDark
+                          ? 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+                          : 'bg-blue-50 text-blue-700 border-blue-200'
+                      }`}
+                    >
                       15+ Years Exp
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2 text-[11px] font-mono text-slate-400 pt-1">
+                  <div
+                    className={`grid grid-cols-2 gap-2 text-[11px] font-mono pt-1 ${
+                      isDark ? 'text-slate-400' : 'text-slate-600'
+                    }`}
+                  >
                     <div className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+                      <MapPin
+                        className={`w-3.5 h-3.5 ${
+                          isDark ? 'text-cyan-400' : 'text-cyan-600'
+                        }`}
+                      />
                       <span>Tenkasi, Tamil Nadu</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                      <ShieldCheck
+                        className={`w-3.5 h-3.5 ${
+                          isDark ? 'text-emerald-400' : 'text-emerald-600'
+                        }`}
+                      />
                       <span>Enterprise IT Systems</span>
                     </div>
                   </div>

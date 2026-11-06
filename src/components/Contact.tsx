@@ -58,13 +58,29 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 mb-3">
+          <div
+            className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider mb-3 border ${
+              isDark
+                ? 'text-cyan-400 bg-cyan-950/60 border-cyan-500/30'
+                : 'text-cyan-800 bg-cyan-50 border-cyan-200'
+            }`}
+          >
             <MessageSquare className="w-3.5 h-3.5" />
             <span>Initiate Direct Communication</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+          <h2
+            className={`text-3xl sm:text-5xl font-extrabold tracking-tight ${
+              isDark ? 'text-white' : 'text-slate-900'
+            }`}
+          >
             Let&apos;s Connect and Build{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-electric-500">
+            <span
+              className={`text-transparent bg-clip-text bg-gradient-to-r ${
+                isDark
+                  ? 'from-cyan-400 via-blue-400 to-electric-500'
+                  : 'from-cyan-600 via-blue-600 to-electric-700'
+              }`}
+            >
               Reliable IT Environments.
             </span>
           </h2>
@@ -92,16 +108,32 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-cyan-400" />
+                  <div
+                    className={`w-11 h-11 rounded-xl flex items-center justify-center border ${
+                      isDark
+                        ? 'bg-cyan-500/10 border-cyan-500/20'
+                        : 'bg-cyan-50 border-cyan-200'
+                    }`}
+                  >
+                    <Mail
+                      className={`w-5 h-5 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}
+                    />
                   </div>
                   <div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+                    <div
+                      className={`text-[11px] font-mono uppercase tracking-wider ${
+                        isDark ? 'text-slate-400' : 'text-slate-500'
+                      }`}
+                    >
                       Email Address
                     </div>
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="font-semibold text-white hover:text-cyan-400 text-sm sm:text-base transition-colors"
+                      className={`font-semibold text-sm sm:text-base transition-colors ${
+                        isDark
+                          ? 'text-white hover:text-cyan-400'
+                          : 'text-slate-900 hover:text-blue-600'
+                      }`}
                     >
                       {personalInfo.email}
                     </a>
@@ -112,7 +144,11 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
                   <button
                     onClick={() => copyToClipboard(personalInfo.email, 'email')}
                     title="Copy Email"
-                    className="p-2 rounded-lg bg-slate-800/60 hover:bg-slate-700/80 text-slate-300 transition-colors"
+                    className={`p-2 rounded-lg transition-colors ${
+                      isDark
+                        ? 'bg-slate-800/60 hover:bg-slate-700/80 text-slate-300'
+                        : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
+                    }`}
                   >
                     {copiedType === 'email' ? (
                       <Check className="w-4 h-4 text-emerald-400" />
@@ -123,7 +159,11 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
                   <a
                     href={`mailto:${personalInfo.email}`}
                     title="Send Email"
-                    className="p-2 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 transition-colors"
+                    className={`p-2 rounded-lg transition-colors ${
+                      isDark
+                        ? 'bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400'
+                        : 'bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200'
+                    }`}
                   >
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
@@ -141,16 +181,32 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-blue-400" />
+                  <div
+                    className={`w-11 h-11 rounded-xl flex items-center justify-center border ${
+                      isDark
+                        ? 'bg-blue-500/10 border-blue-500/20'
+                        : 'bg-blue-50 border-blue-200'
+                    }`}
+                  >
+                    <Phone
+                      className={`w-5 h-5 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}
+                    />
                   </div>
                   <div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+                    <div
+                      className={`text-[11px] font-mono uppercase tracking-wider ${
+                        isDark ? 'text-slate-400' : 'text-slate-500'
+                      }`}
+                    >
                       Phone Number
                     </div>
                     <a
                       href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
-                      className="font-semibold text-white hover:text-blue-400 text-sm sm:text-base transition-colors"
+                      className={`font-semibold text-sm sm:text-base transition-colors ${
+                        isDark
+                          ? 'text-white hover:text-blue-400'
+                          : 'text-slate-900 hover:text-blue-600'
+                      }`}
                     >
                       {personalInfo.phone}
                     </a>
@@ -161,7 +217,11 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
                   <button
                     onClick={() => copyToClipboard(personalInfo.phone, 'phone')}
                     title="Copy Phone"
-                    className="p-2 rounded-lg bg-slate-800/60 hover:bg-slate-700/80 text-slate-300 transition-colors"
+                    className={`p-2 rounded-lg transition-colors ${
+                      isDark
+                        ? 'bg-slate-800/60 hover:bg-slate-700/80 text-slate-300'
+                        : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
+                    }`}
                   >
                     {copiedType === 'phone' ? (
                       <Check className="w-4 h-4 text-emerald-400" />
@@ -172,7 +232,11 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
                   <a
                     href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
                     title="Call Phone"
-                    className="p-2 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 transition-colors"
+                    className={`p-2 rounded-lg transition-colors ${
+                      isDark
+                        ? 'bg-blue-500/10 hover:bg-blue-500/20 text-blue-400'
+                        : 'bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200'
+                    }`}
                   >
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
@@ -190,14 +254,32 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                    <MessageSquare className="w-5 h-5 text-emerald-400" />
+                  <div
+                    className={`w-11 h-11 rounded-xl flex items-center justify-center border ${
+                      isDark
+                        ? 'bg-emerald-500/10 border-emerald-500/20'
+                        : 'bg-emerald-50 border-emerald-200'
+                    }`}
+                  >
+                    <MessageSquare
+                      className={`w-5 h-5 ${
+                        isDark ? 'text-emerald-400' : 'text-emerald-600'
+                      }`}
+                    />
                   </div>
                   <div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+                    <div
+                      className={`text-[11px] font-mono uppercase tracking-wider ${
+                        isDark ? 'text-slate-400' : 'text-slate-500'
+                      }`}
+                    >
                       WhatsApp Messaging
                     </div>
-                    <span className="font-semibold text-white text-sm sm:text-base">
+                    <span
+                      className={`font-semibold text-sm sm:text-base ${
+                        isDark ? 'text-white' : 'text-slate-900'
+                      }`}
+                    >
                       +91 9894668866
                     </span>
                   </div>
@@ -224,17 +306,37 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
               }`}
             >
               <div className="flex items-center gap-3.5">
-                <div className="w-11 h-11 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-cyan-400" />
+                <div
+                  className={`w-11 h-11 rounded-xl flex items-center justify-center border ${
+                    isDark
+                      ? 'bg-slate-800/80 border-slate-700/60'
+                      : 'bg-slate-100 border-slate-200'
+                  }`}
+                >
+                  <MapPin
+                    className={`w-5 h-5 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}
+                  />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+                  <div
+                    className={`text-[11px] font-mono uppercase tracking-wider ${
+                      isDark ? 'text-slate-400' : 'text-slate-500'
+                    }`}
+                  >
                     Geographic Location
                   </div>
-                  <div className="font-semibold text-white text-sm sm:text-base">
+                  <div
+                    className={`font-semibold text-sm sm:text-base ${
+                      isDark ? 'text-white' : 'text-slate-900'
+                    }`}
+                  >
                     {personalInfo.location}
                   </div>
-                  <div className="text-xs text-slate-400 font-mono mt-0.5">
+                  <div
+                    className={`text-xs font-mono mt-0.5 ${
+                      isDark ? 'text-slate-400' : 'text-slate-600'
+                    }`}
+                  >
                     Open to Relocation &amp; On-Site Support
                   </div>
                 </div>
@@ -251,24 +353,52 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-cyan-400">
+                  <div
+                    className={`flex items-center gap-1.5 text-xs font-mono ${
+                      isDark ? 'text-cyan-400' : 'text-cyan-700 font-semibold'
+                    }`}
+                  >
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>Official Curriculum Vitae</span>
                   </div>
-                  <h3 className="font-bold text-white text-lg">
+                  <h3
+                    className={`font-bold text-lg ${
+                      isDark ? 'text-white' : 'text-slate-900'
+                    }`}
+                  >
                     Download Full Resume
                   </h3>
-                  <p className="text-xs text-slate-400">
+                  <p
+                    className={`text-xs ${
+                      isDark ? 'text-slate-400' : 'text-slate-600'
+                    }`}
+                  >
                     Original verified 2-page CV containing complete historical credentials.
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
-                  <FileDown className="w-6 h-6 text-cyan-400" />
+                <div
+                  className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border ${
+                    isDark
+                      ? 'bg-cyan-500/10 border-cyan-500/20'
+                      : 'bg-cyan-50 border-cyan-200'
+                  }`}
+                >
+                  <FileDown
+                    className={`w-6 h-6 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}
+                  />
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between">
-                <div className="text-[11px] font-mono text-slate-400">
+              <div
+                className={`mt-4 pt-4 border-t flex items-center justify-between ${
+                  isDark ? 'border-slate-800' : 'border-slate-200'
+                }`}
+              >
+                <div
+                  className={`text-[11px] font-mono ${
+                    isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}
+                >
                   <span>Format: PDF</span> • <span>Size: 448 KB</span>
                 </div>
                 <button
@@ -294,14 +424,28 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
             >
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white">
+                  <h3
+                    className={`text-xl font-bold ${
+                      isDark ? 'text-white' : 'text-slate-900'
+                    }`}
+                  >
                     Send Direct Message
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1">
+                  <p
+                    className={`text-xs sm:text-sm mt-1 ${
+                      isDark ? 'text-slate-400' : 'text-slate-600'
+                    }`}
+                  >
                     Send a quick hiring opportunity, interview invitation, or IT support inquiry.
                   </p>
                 </div>
-                <div className="hidden sm:flex items-center gap-1 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                <div
+                  className={`hidden sm:flex items-center gap-1 text-xs font-mono px-2.5 py-1 rounded-full border ${
+                    isDark
+                      ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
+                      : 'text-emerald-800 bg-emerald-50 border-emerald-200'
+                  }`}
+                >
                   <ShieldCheck className="w-3.5 h-3.5" />
                   <span>Direct to Inbox</span>
                 </div>
@@ -319,7 +463,11 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono font-medium text-slate-300">
+                    <label
+                      className={`text-xs font-mono font-medium ${
+                        isDark ? 'text-slate-300' : 'text-slate-700'
+                      }`}
+                    >
                       Your Name / Company
                     </label>
                     <input
@@ -337,7 +485,11 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono font-medium text-slate-300">
+                    <label
+                      className={`text-xs font-mono font-medium ${
+                        isDark ? 'text-slate-300' : 'text-slate-700'
+                      }`}
+                    >
                       Your Email Address
                     </label>
                     <input
@@ -356,7 +508,11 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-mono font-medium text-slate-300">
+                  <label
+                    className={`text-xs font-mono font-medium ${
+                      isDark ? 'text-slate-300' : 'text-slate-700'
+                    }`}
+                  >
                     Subject / Role Opportunity
                   </label>
                   <input
@@ -374,7 +530,11 @@ export const Contact: React.FC<ContactProps> = ({ isDark, onDownloadCv }) => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-mono font-medium text-slate-300">
+                  <label
+                    className={`text-xs font-mono font-medium ${
+                      isDark ? 'text-slate-300' : 'text-slate-700'
+                    }`}
+                  >
                     Message Details
                   </label>
                   <textarea

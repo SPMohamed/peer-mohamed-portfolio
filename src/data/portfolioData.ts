@@ -4,6 +4,7 @@ export interface SkillCategory {
   description: string;
   iconName: string;
   skills: string[];
+  subSkills?: Record<string, string[]>;
 }
 
 export interface ExperienceItem {
@@ -72,7 +73,12 @@ export const skillCategories: SkillCategory[] = [
     title: "Operating Systems",
     description: "Enterprise operating systems deployment, policy configuration, and maintenance.",
     iconName: "Monitor",
-    skills: ["Windows 10/11 Administration", "Windows Server"],
+    skills: [
+      "Windows 10/11 Administration",
+      "Windows Server",
+      "macOS",
+      "Linux",
+    ],
   },
   {
     id: "microsoft",
@@ -108,6 +114,13 @@ export const skillCategories: SkillCategory[] = [
     description: "Physical security systems and surveillance hardware deployment.",
     iconName: "ShieldCheck",
     skills: ["CCTV Installation"],
+    subSkills: {
+      "CCTV Installation": [
+        "Camera and NVR Configuration",
+        "Surveillance System Troubleshooting",
+        "Technical Support and Maintenance",
+      ],
+    },
   },
 ];
 
@@ -117,7 +130,7 @@ export const experienceData: ExperienceItem[] = [
     company: "Jaz Computer",
     period: "2018 – Present",
     badge: "Current Role",
-    location: "India",
+    location: "Tenkasi, Tamil Nadu, India",
     responsibilities: [
       "Windows Server administration, DNS/DHCP infrastructure maintenance and domain management",
       "Microsoft 365 tenant support, account management, mailbox administration and cloud services",
@@ -142,7 +155,7 @@ export const experienceData: ExperienceItem[] = [
     company: "The Chennai Computers",
     period: "2005 – 2009",
     badge: "Technical Service",
-    location: "Chennai, Tamil Nadu",
+    location: "Tenkasi, Tamil Nadu, India",
     responsibilities: [
       "PC assembly, hardware testing, and system builds",
       "Operating system installation, driver configuration, and peripheral setup",

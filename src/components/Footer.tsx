@@ -7,16 +7,14 @@ import {
   Phone,
   MessageSquare,
   ShieldCheck,
-  FileDown,
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 interface FooterProps {
   isDark: boolean;
-  onDownloadCv: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ isDark, onDownloadCv }) => {
+export const Footer: React.FC<FooterProps> = ({ isDark }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -32,7 +30,11 @@ export const Footer: React.FC<FooterProps> = ({ isDark, onDownloadCv }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-slate-800/80">
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b ${
+            isDark ? 'border-slate-800/80' : 'border-slate-300'
+          }`}
+        >
           
           {/* Identity Column */}
           <div className="lg:col-span-5 space-y-4">
@@ -41,16 +43,28 @@ export const Footer: React.FC<FooterProps> = ({ isDark, onDownloadCv }) => {
                 <Server className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-white tracking-tight">
+                <h3
+                  className={`font-bold text-lg tracking-tight ${
+                    isDark ? 'text-white' : 'text-slate-900'
+                  }`}
+                >
                   {personalInfo.name}
                 </h3>
-                <p className="text-xs font-mono text-cyan-400">
+                <p
+                  className={`text-xs font-mono ${
+                    isDark ? 'text-cyan-400' : 'text-cyan-700'
+                  }`}
+                >
                   {personalInfo.title}
                 </p>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm leading-relaxed max-w-sm">
+            <p
+              className={`text-xs sm:text-sm leading-relaxed max-w-sm ${
+                isDark ? 'text-slate-400' : 'text-slate-600'
+              }`}
+            >
               Providing enterprise-grade system administration, Windows Server management, cloud productivity (M365), and reliable technical support.
             </p>
 
@@ -59,32 +73,61 @@ export const Footer: React.FC<FooterProps> = ({ isDark, onDownloadCv }) => {
 
           {/* Quick Nav Links */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-slate-200 font-semibold">
+            <h4
+              className={`text-xs font-mono uppercase tracking-wider font-semibold ${
+                isDark ? 'text-slate-200' : 'text-slate-800'
+              }`}
+            >
               Navigation
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <a href="#about" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="#about"
+                  className={`transition-colors ${
+                    isDark ? 'hover:text-cyan-400' : 'text-slate-600 hover:text-blue-600'
+                  }`}
+                >
                   About Me
                 </a>
               </li>
               <li>
-                <a href="#skills" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="#skills"
+                  className={`transition-colors ${
+                    isDark ? 'hover:text-cyan-400' : 'text-slate-600 hover:text-blue-600'
+                  }`}
+                >
                   Technical Skills
                 </a>
               </li>
               <li>
-                <a href="#experience" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="#experience"
+                  className={`transition-colors ${
+                    isDark ? 'hover:text-cyan-400' : 'text-slate-600 hover:text-blue-600'
+                  }`}
+                >
                   Professional Experience
                 </a>
               </li>
               <li>
-                <a href="#education" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="#education"
+                  className={`transition-colors ${
+                    isDark ? 'hover:text-cyan-400' : 'text-slate-600 hover:text-blue-600'
+                  }`}
+                >
                   Education &amp; Credentials
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-cyan-400 transition-colors">
+                <a
+                  href="#contact"
+                  className={`transition-colors ${
+                    isDark ? 'hover:text-cyan-400' : 'text-slate-600 hover:text-blue-600'
+                  }`}
+                >
                   Contact &amp; Connect
                 </a>
               </li>
@@ -93,53 +136,67 @@ export const Footer: React.FC<FooterProps> = ({ isDark, onDownloadCv }) => {
 
           {/* Direct Contact Info */}
           <div className="lg:col-span-4 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-slate-200 font-semibold">
+            <h4
+              className={`text-xs font-mono uppercase tracking-wider font-semibold ${
+                isDark ? 'text-slate-200' : 'text-slate-800'
+              }`}
+            >
               Contact Details
             </h4>
             <div className="space-y-2.5 text-xs sm:text-sm font-mono">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>{personalInfo.location}</span>
+                <MapPin
+                  className={`w-4 h-4 shrink-0 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}
+                />
+                <span className={isDark ? 'text-slate-400' : 'text-slate-700'}>
+                  {personalInfo.location}
+                </span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
+                <Mail
+                  className={`w-4 h-4 shrink-0 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}
+                />
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="hover:text-cyan-400 transition-colors"
+                  className={`transition-colors ${
+                    isDark ? 'text-slate-400 hover:text-cyan-400' : 'text-slate-700 hover:text-blue-600'
+                  }`}
                 >
                   {personalInfo.email}
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
+                <Phone
+                  className={`w-4 h-4 shrink-0 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}
+                />
                 <a
                   href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
-                  className="hover:text-cyan-400 transition-colors"
+                  className={`transition-colors ${
+                    isDark ? 'text-slate-400 hover:text-cyan-400' : 'text-slate-700 hover:text-blue-600'
+                  }`}
                 >
                   {personalInfo.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <MessageSquare className="w-4 h-4 text-emerald-400 shrink-0" />
+                <MessageSquare
+                  className={`w-4 h-4 shrink-0 ${
+                    isDark ? 'text-emerald-400' : 'text-emerald-600'
+                  }`}
+                />
                 <a
                   href={personalInfo.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 transition-colors"
+                  className={`transition-colors ${
+                    isDark
+                      ? 'text-slate-400 hover:text-emerald-400'
+                      : 'text-slate-700 hover:text-emerald-600'
+                  }`}
                 >
                   WhatsApp Direct Chat
                 </a>
               </div>
-            </div>
-
-            <div className="pt-2">
-              <button
-                onClick={onDownloadCv}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-mono bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
-              >
-                <FileDown className="w-3.5 h-3.5 text-cyan-400" />
-                <span>Download CV (PDF)</span>
-              </button>
             </div>
           </div>
 
@@ -147,17 +204,29 @@ export const Footer: React.FC<FooterProps> = ({ isDark, onDownloadCv }) => {
 
         {/* Bottom Bar: Copyright & Back To Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
-          <div className="flex items-center gap-2 text-slate-400">
-            <ShieldCheck className="w-4 h-4 text-cyan-400" />
+          <div
+            className={`flex items-center gap-2 ${
+              isDark ? 'text-slate-400' : 'text-slate-600'
+            }`}
+          >
+            <ShieldCheck
+              className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`}
+            />
             <span>&copy; {currentYear} {personalInfo.name}. All rights reserved.</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-slate-400">Designed with modern SaaS standards</span>
+            <span className={isDark ? 'text-slate-400' : 'text-slate-600'}>
+              Designed with modern SaaS standards
+            </span>
             <button
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+              className={`p-2 rounded-lg transition-colors ${
+                isDark
+                  ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white'
+                  : 'bg-white hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-300 shadow-sm'
+              }`}
             >
               <ArrowUp className="w-4 h-4" />
             </button>
